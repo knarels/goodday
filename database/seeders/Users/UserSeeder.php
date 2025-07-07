@@ -11,6 +11,9 @@ final class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        User::factory()->count(5)->create();
+        User::factory()->user()->count(5)->create();
+
+        // Creating Admin User. This should not be here and is added for the simplicity.
+        User::factory()->admin()->createOne();
     }
 }

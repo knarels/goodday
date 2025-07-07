@@ -16,13 +16,6 @@ class UserFactory extends Factory
 {
     protected static ?string $password;
 
-    public function configure(): static
-    {
-        return $this->afterCreating(function (User $user) {
-            $user->assignRole('user');
-        });
-    }
-
     /**
      * @return array<string, mixed>
      */
@@ -39,6 +32,23 @@ class UserFactory extends Factory
             'profile_photo_path' => null,
             'current_team_id' => null,
         ];
+    }
+
+    public function user(): static
+    {
+        return $this->state(fn (array $attributes) => [])->afterCreating(fn (User $user) => $user->assignRole('user'));
+    }
+
+    /**
+     * Creating Admin User. This should not be here and is added for the simplicity.
+     */
+    public function admin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin'),
+        ])->afterCreating(fn (User $user) => $user->assignRole('admin'));
     }
 
     public function unverified(): static
