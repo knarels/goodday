@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Database\Seeders;
+namespace Database\Seeders\Permissions;
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 
-class RolesAndPermissionsSeeder extends Seeder
+final class RolesAndPermissionsSeeder extends Seeder
 {
     private const PERMISSION_VIEW_NEWS = 'view news';
     private const PERMISSION_MANAGE_NEWS = 'manage news';
@@ -48,16 +48,12 @@ class RolesAndPermissionsSeeder extends Seeder
 
     private function createPermissions(): void
     {
-        array_map(function (string $permissionName) {
-            Permission::findOrCreate($permissionName);
-        }, self::PERMISSIONS);
+        array_map(static fn(string $permissionName) => Permission::findOrCreate($permissionName), self::PERMISSIONS);
     }
 
     private function createRoles(): void
     {
-        array_map(function (string $roleName) {
-            Role::findOrCreate($roleName);
-        }, self::ROLES);
+        array_map(static fn(string $roleName) => Role::findOrCreate($roleName), self::ROLES);
     }
 
     private function assignPermissionsToRoles(): void
