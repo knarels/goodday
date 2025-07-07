@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\RoleAndPermissionRepository;
-use App\Repositories\RoleAndPermissionRepositoryInterface;
+use App\Repositories\Admin\RoleAndPermissionRepository;
+use App\Repositories\Admin\RoleAndPermissionRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

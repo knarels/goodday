@@ -11,7 +11,7 @@ use App\Http\Resources\Admin\PermissionResource;
 use App\Http\Resources\Admin\RoleResource;
 use App\Http\Resources\Admin\UserResource;
 use App\Models\User;
-use App\Repositories\RoleAndPermissionRepositoryInterface;
+use App\Repositories\Admin\RoleAndPermissionRepositoryInterface;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
