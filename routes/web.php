@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\RoleAndPermissionController;
 use App\Http\Middleware\Admin\AdminMiddleware;
 use Illuminate\Foundation\Application;
@@ -32,6 +33,7 @@ Route::middleware([
                 ->name('users.update-roles');
             Route::put('/roles/{role}/permissions', [RoleAndPermissionController::class, 'updateRolePermissions'])
                 ->name('roles.update-permissions');
-        })
-    ;
+        });
+
+    Route::resource('articles', ArticleController::class);
 });

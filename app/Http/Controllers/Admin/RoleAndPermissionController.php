@@ -11,7 +11,7 @@ use App\Http\Resources\Admin\PermissionResource;
 use App\Http\Resources\Admin\RoleResource;
 use App\Http\Resources\Admin\UserResource;
 use App\Models\User;
-use App\Repositories\Admin\RoleAndPermissionRepositoryInterface;
+use App\Repositories\Admin\RoleAndPermissionRepository;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -19,7 +19,7 @@ use Spatie\Permission\Models\Role;
 
 class RoleAndPermissionController extends Controller
 {
-    public function __construct(private readonly RoleAndPermissionRepositoryInterface $roleAndPermissionRepository)
+    public function __construct(private readonly RoleAndPermissionRepository $roleAndPermissionRepository)
     {
     }
 

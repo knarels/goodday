@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class RoleAndPermissionRepository implements RoleAndPermissionRepositoryInterface
+class RoleAndPermissionRepository
 {
     /**
      * @return Collection<int, User>

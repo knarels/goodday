@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { Head, Link } from '@inertiajs/vue3'; // Ensure Link is imported
+import { Head, Link, router } from '@inertiajs/vue3'; // Ensure router is imported here
 import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
 import Dropdown from '@/Components/Dropdown.vue';
@@ -46,12 +46,16 @@ const logout = () => {
                                 </Link>
                             </div>
 
+                            <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
                                 <NavLink :href="route('admin.roles-permissions.index')" :active="route().current('admin.roles-permissions.index')">
                                     Roles & Permissions
+                                </NavLink>
+                                <NavLink :href="route('articles.index')" :active="route().current('articles.*')">
+                                    Articles
                                 </NavLink>
                             </div>
                         </div>
@@ -139,6 +143,9 @@ const logout = () => {
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('admin.roles-permissions.index')" :active="route().current('admin.roles-permissions.index')">
                             Roles & Permissions
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('articles.index')" :active="route().current('articles.*')">
+                            Articles
                         </ResponsiveNavLink>
                     </div>
 

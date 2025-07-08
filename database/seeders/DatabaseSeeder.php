@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use Database\Seeders\Article\ArticleSeeder;
 use Database\Seeders\Permissions\RolesAndPermissionsSeeder;
 use Database\Seeders\Users\UserSeeder;
 use Illuminate\Database\Seeder;
@@ -14,7 +15,8 @@ final class DatabaseSeeder extends Seeder
     {
         $this->call([
             RolesAndPermissionsSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            ArticleSeeder::class,
         ]);
     }
 }

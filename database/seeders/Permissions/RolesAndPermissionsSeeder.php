@@ -11,21 +11,17 @@ use Spatie\Permission\PermissionRegistrar;
 
 final class RolesAndPermissionsSeeder extends Seeder
 {
-    private const MANAGE_ROLES           = 'manage roles';
-    private const MANAGE_PERMISSIONS     = 'manage permissions';
-    private const MANAGE_USERS           = 'manage users';
-    private const PERMISSION_VIEW_NEWS   = 'view news';
-    private const PERMISSION_MANAGE_NEWS = 'manage news';
-    private const PERMISSION_VIEW_BLOG   = 'view blog';
-    private const PERMISSION_MANAGE_BLOG = 'manage blog';
+    private const MANAGE_ROLES               = 'manage roles';
+    private const MANAGE_PERMISSIONS         = 'manage permissions';
+    private const MANAGE_USERS               = 'manage users';
+    private const PERMISSION_VIEW_ARTICLES   = 'view articles';
+    private const PERMISSION_MANAGE_ARTICLES = 'manage articles';
     private const PERMISSIONS = [
         self::MANAGE_ROLES,
         self::MANAGE_PERMISSIONS,
         self::MANAGE_USERS,
-        self::PERMISSION_VIEW_NEWS,
-        self::PERMISSION_MANAGE_NEWS,
-        self::PERMISSION_VIEW_BLOG,
-        self::PERMISSION_MANAGE_BLOG
+        self::PERMISSION_VIEW_ARTICLES,
+        self::PERMISSION_MANAGE_ARTICLES
     ];
 
     private const ROLE_ADMIN = 'admin';
@@ -36,7 +32,7 @@ final class RolesAndPermissionsSeeder extends Seeder
     ];
 
     private const ROLE_PERMISSIONS = [
-        self::ROLE_USER => [self::PERMISSION_VIEW_NEWS, self::PERMISSION_VIEW_BLOG]
+        self::ROLE_USER => [self::PERMISSION_VIEW_ARTICLES]
     ];
 
     public function __construct(private readonly PermissionRegistrar $permissionRegistrar)
