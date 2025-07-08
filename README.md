@@ -2,13 +2,13 @@
 ```
 cp .env.example .env
 ```
-## 2. run the docker compose
-```
-docker compose up -d
-```
-## 3. install compose dependencies
+## 2. install composer dependencies
 ```
 composer install
+```
+## 2. run docker containers
+```
+sail up -d
 ```
 ## 4. generate app key
 ```
@@ -19,3 +19,7 @@ sail artisan key:generate
 sail artisan migrate
 sail db:seed
 ```
+
+# If I would want to spend more time on this, I would:
+## 1. Create landing page (currently all blog and news articles are together)
+## 2. create unit tests for the functionality
